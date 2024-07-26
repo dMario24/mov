@@ -1,4 +1,14 @@
 import requests
+import os
+
+def req2dataframe():
+    _, data = req()
+    l = data['boxOfficeResult']['dailyBoxOfficeList']
+    return l
+
+def get_key():
+    key = os.getenv('MOVIE_API_KEY')
+    return key
 
 def req(dt="20120101"):
     #url = gen_url('20240720')
@@ -12,7 +22,7 @@ def req(dt="20120101"):
 
 def gen_url(dt="20120101"):
     base_url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
-    key = "2820df87eeb6a918654941ca8a918b2b"
+    key = get_key()
     url = f"{base_url}?key={key}&targetDt={dt}"
 
     return url
