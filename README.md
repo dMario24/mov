@@ -4,6 +4,9 @@
 ```bash
 # main
 $ pip install git+https://github.com/dMario24/mov.git
+
+# branch
+$ pip install git+https://github.com/dMario24/mov.git@<BRANCH_NAME>
 ```
 ### start dev
 ```bash
