@@ -1,15 +1,21 @@
 [project]
 name = "mov"
-version = "0.1.0"
-description = "Default template for PDM package"
+version = "0.2.0"
+description = "영화진흥위원회 영화순위 데이터 처리"
 authors = [
     {name = "dMario24", email = "data.mario24@gmail.com"},
 ]
 dependencies = []
-requires-python = "==3.11.*"
+requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
 
-
 [tool.pdm]
 distribution = false
+
+[project.scripts]
+mov-ping = 'mov.cli:ping'
+
+[project.urls]
+Homepage = "https://github.com/dMario24/mov"
+Issues = "https://github.com/dMario24/mov/issues"
