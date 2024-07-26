@@ -11,7 +11,7 @@ readme = "README.md"
 license = {text = "MIT"}
 
 [tool.pdm]
-distribution = false
+distribution = true
 
 [project.scripts]
 mov-ping = 'mov.cli:ping'
