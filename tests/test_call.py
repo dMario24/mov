@@ -2,7 +2,7 @@ from mov.api.call import gen_url, req, get_key, req2list, list2df, save2df
 import pandas as pd
 
 def test_save2df():
-    df = save2df(load_dt='20241231')
+    df = save2df()
     assert isinstance(df, pd.DataFrame)
     assert 'load_dt' in df.columns
 
