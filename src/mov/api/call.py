@@ -4,7 +4,7 @@ import pandas as pd
 
 def save2df(load_dt='20210101'):
     """airflow 호출 지점"""
-    df = list2df()
+    df = list2df(load_dt)
     # df 에 load_dt 컬럼 추가 (조회 일자 YYYYMMDD 형식 으로)
     # 아래 파일 저장시 load_dt 기분으로 파티셔닝
     df['load_dt'] = '20120101'
@@ -13,13 +13,13 @@ def save2df(load_dt='20210101'):
     return df
 
 
-def list2df():
-    l = req2list()
+def list2df(load_dt='20120101'):
+    l = req2list(load_dt)
     df = pd.DataFrame(l)
     return df
 
-def req2list() -> list:
-    _, data = req()
+def req2list(load_dt='20120101') -> list:
+    _, data = req(load_dt)
     l = data['boxOfficeResult']['dailyBoxOfficeList']
     return l
 
