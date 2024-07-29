@@ -2,7 +2,7 @@ import requests
 import os
 import pandas as pd
 
-def save2df():
+def save2df(load_dt='20210101'):
     """airflow 호출 지점"""
     df = list2df()
     # df 에 load_dt 컬럼 추가 (조회 일자 YYYYMMDD 형식 으로)
