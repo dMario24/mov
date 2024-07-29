@@ -14,6 +14,7 @@ $ pip install git+https://github.com/dMario24/mov.git@<BRANCH_NAME>
 $ git clone <URL>
 $ cd <DIR>
 $ source .venv/bin/activate
+$ pdm install
 $ pytest
 
 # option
