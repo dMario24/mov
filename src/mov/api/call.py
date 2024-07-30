@@ -12,10 +12,10 @@ def apply_type2df(load_dt="20120101", path="~/tmp/test_parquet"):
                 'audiAcc', 'scrnCnt', 'showCnt', 'salesShare', 'salesInten', 
                 'salesChange', 'audiInten', 'audiChange']
 
-    for col_name in num_cols:
-        df[col_name] = pd.to_numeric(df[col_name])
+    #for col_name in num_cols:
+    #    df[col_name] = pd.to_numeric(df[col_name])
     
-    #df[num_cols] = df[num_cols].apply(pd.to_numeric)
+    df[num_cols] = df[num_cols].apply(pd.to_numeric)
 
     return df
 
