@@ -51,7 +51,7 @@ def test_유알엘테스트():
     assert "kobis" in url
     
     d = {"multiMovieYn": "N"}
-    url = gen_url(req_val = d)
+    url = gen_url(url_param = d)
     assert "multiMovieYn" in url
     
 
