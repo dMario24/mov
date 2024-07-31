@@ -58,5 +58,8 @@ def gen_url(dt="20120101", url_param = {"multiMovieYn": "N"}):
     url = f"{base_url}?key={key}&targetDt={dt}"
     for k, v in url_param.items():
         url = url + f"&{k}={v}"
-
+    
+    print("*^=" * 10)
+    print(url)
+    print("*^=" * 10)
     return url
