@@ -20,7 +20,7 @@ def apply_type2df(load_dt="20120101", path="~/tmp/test_parquet"):
     return df
 
 
-def save2df(load_dt='20120101'):
+def save2df(load_dt='20120101', url_param={}):
     """airflow 호출 지점"""
     df = list2df(load_dt)
     # df 에 load_dt 컬럼 추가 (조회 일자 YYYYMMDD 형식 으로)
@@ -55,9 +55,11 @@ def req(load_dt="20120101"):
     return code, data
 
 
-def gen_url(dt="20120101"):
+def gen_url(dt="20120101", req_val = {"multiMovieYn": "N"}):
     base_url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
     key = get_key()
     url = f"{base_url}?key={key}&targetDt={dt}"
+    for k, v in req_val.items():
+        url = url + f"&{k}={v}"
 
     return url
