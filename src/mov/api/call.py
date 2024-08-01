@@ -21,7 +21,7 @@ def apply_type2df(load_dt="20120101", path="~/tmp/test_parquet"):
 
 def save2df(load_dt='20120101', url_param={}):
     """airflow 호출 지점"""
-    df = list2df(url_parame=url_param, load_dt=load_dt)
+    df = list2df(url_param=url_param, load_dt=load_dt)
     # df 에 load_dt 컬럼 추가 (조회 일자 YYYYMMDD 형식 으로)
     df['load_dt'] = load_dt
     # 아래 파일 저장시 load_dt 기준으로 파티셔닝
